@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resultados da pesquisa</title>
+
+    <link rel="stylesheet" href="{% static 'pesquisa/css/style.css' %}">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <h1>Resultados da pesquisa</h1>
+
+        <section class="resultado-destaque">
+            <h2>Total de participantes</h2>
+
+            <p class="numero">
+                {{ total_participantes }}
+            </p>
+        </section>
+
+
+        <section class="resultado">
+
+            <h2>Participantes por faixa etária</h2>
+
+            <ul>
+
+                {% for faixa in participantes_por_faixa %}
+
+                    <li>
+                        <span>{{ faixa.nome }}</span>
+                        <strong>{{ faixa.total }}</strong>
+                    </li>
+
+                {% empty %}
+
+                    <li>Nenhuma resposta registrada.</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </section>
+
+
+        <section class="resultado">
+
+            <h2>Finalidades mais escolhidas</h2>
+
+            <ul>
+
+                {% for finalidade in finalidades_mais_escolhidas %}
+
+                    <li>
+                        <span>{{ finalidade.finalidade__nome }}</span>
+                        <strong>{{ finalidade.total }}</strong>
+                    </li>
+
+                {% empty %}
+
+                    <li>Nenhuma finalidade registrada.</li>
+
+                {% endfor %}
+
+            </ul>
+
+        </section>
+
+
+        <section class="resultado">
+
+            <h2>Finalidades por faixa etária</h2>
+
+            {% for item in finalidades_por_faixa %}
+
+                <div class="item-faixa">
+
+                    <strong>
+                        {{ item.nome_faixa }}
+                    </strong>
+
+                    <span>
+                        {{ item.finalidade__nome }}:
+                        {{ item.total }}
+                    </span>
+
+                </div>
+
+            {% empty %}
+
+                <p>Nenhum dado registrado.</p>
+
+            {% endfor %}
+
+        </section>
+
+    </main>
+
+</body>
+</html>

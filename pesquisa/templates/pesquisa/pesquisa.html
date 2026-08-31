@@ -1,0 +1,107 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pesquisa sobre o uso da tecnologia</title>
+
+    <link rel="stylesheet" href="{% static 'pesquisa/css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Pesquisa sobre o uso da tecnologia</h1>
+
+        <p class="introducao">
+            Esta é uma versão inicial (MVP) da aplicação, desenvolvida para fins
+            acadêmicos e de teste.
+        </p>
+
+        <form method="post">
+
+            {% csrf_token %}
+
+            <div class="campo">
+                <label for="{{ form.nome.id_for_label }}">
+                    Nome:
+                </label>
+
+                {{ form.nome }}
+
+                {% if form.nome.errors %}
+                    <div class="erro">
+                        {{ form.nome.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="campo">
+                <label for="{{ form.email.id_for_label }}">
+                    E-mail:
+                </label>
+
+                {{ form.email }}
+
+                {% if form.email.errors %}
+                    <div class="erro">
+                        {{ form.email.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="campo">
+
+                <label>
+                    {{ form.faixa_etaria.label }}
+                </label>
+
+                <div class="opcoes">
+                    {{ form.faixa_etaria }}
+                </div>
+
+                {% if form.faixa_etaria.errors %}
+                    <div class="erro">
+                        {{ form.faixa_etaria.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+            <div class="campo">
+
+                <label>
+                    {{ form.finalidades.label }}
+                </label>
+
+                <p class="instrucao">
+                    Selecione de 1 a 3 opções que representam as principais
+                    finalidades para as quais você mais utiliza a tecnologia.
+                </p>
+
+                <div class="opcoes">
+                    {{ form.finalidades }}
+                </div>
+
+                {% if form.finalidades.errors %}
+                    <div class="erro">
+                        {{ form.finalidades.errors }}
+                    </div>
+                {% endif %}
+
+            </div>
+
+            <button type="submit">
+                Enviar resposta
+            </button>
+
+        </form>
+
+    </div>
+
+</body>
+</html>

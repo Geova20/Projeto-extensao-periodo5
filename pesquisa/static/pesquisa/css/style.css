@@ -1,0 +1,200 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 15px;
+}
+
+/* =========================
+   FORMULÁRIO
+   ========================= */
+
+.introducao {
+    text-align: center;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.campo {
+    margin-bottom: 25px;
+}
+
+.campo > label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.campo input[type="text"],
+.campo input[type="email"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.campo input[type="text"]:focus,
+.campo input[type="email"]:focus {
+    outline: none;
+    border-color: #777;
+}
+
+.opcoes {
+    margin-top: 10px;
+}
+
+.opcoes ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.opcoes li {
+    margin-bottom: 10px;
+}
+
+.opcoes label {
+    font-weight: normal;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.opcoes input[type="radio"],
+.opcoes input[type="checkbox"] {
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.instrucao {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-top: 8px;
+    margin-bottom: 12px;
+}
+
+.erro {
+    color: #b00020;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.erro ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 6px;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* =========================
+   PÁGINA DE SUCESSO
+   ========================= */
+
+.botao-link {
+    display: block;
+    width: fit-content;
+    margin: 25px auto 0;
+    padding: 13px 24px;
+    border-radius: 6px;
+    background-color: #333;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    text-align: center;
+}
+
+.botao-link:hover {
+    background-color: #555;
+}
+
+/* =========================
+   RESULTADOS
+   ========================= */
+
+.resultado-destaque {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+}
+
+.numero {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 10px 0 0;
+}
+
+.resultado {
+    margin-bottom: 30px;
+}
+
+.resultado ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resultado li {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+}
+
+.resultado li strong {
+    font-size: 16px;
+}
+
+.item-faixa {
+    padding: 12px 15px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    background-color: #f7f7f7;
+}
+
+.item-faixa strong {
+    display: block;
+    margin-bottom: 5px;
+}
